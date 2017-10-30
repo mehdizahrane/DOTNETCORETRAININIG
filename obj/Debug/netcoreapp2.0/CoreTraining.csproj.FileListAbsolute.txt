@@ -1,0 +1,10 @@
+C:\Users\Usedi1\Desktop\CoreTraining\bin\Debug\netcoreapp2.0\CoreTraining.deps.json
+C:\Users\Usedi1\Desktop\CoreTraining\bin\Debug\netcoreapp2.0\CoreTraining.runtimeconfig.json
+C:\Users\Usedi1\Desktop\CoreTraining\bin\Debug\netcoreapp2.0\CoreTraining.runtimeconfig.dev.json
+C:\Users\Usedi1\Desktop\CoreTraining\bin\Debug\netcoreapp2.0\CoreTraining.dll
+C:\Users\Usedi1\Desktop\CoreTraining\bin\Debug\netcoreapp2.0\CoreTraining.pdb
+C:\Users\Usedi1\Desktop\CoreTraining\obj\Debug\netcoreapp2.0\CoreTraining.csproj.CoreCompileInputs.cache
+C:\Users\Usedi1\Desktop\CoreTraining\obj\Debug\netcoreapp2.0\CoreTraining.AssemblyInfoInputs.cache
+C:\Users\Usedi1\Desktop\CoreTraining\obj\Debug\netcoreapp2.0\CoreTraining.AssemblyInfo.cs
+C:\Users\Usedi1\Desktop\CoreTraining\obj\Debug\netcoreapp2.0\CoreTraining.dll
+C:\Users\Usedi1\Desktop\CoreTraining\obj\Debug\netcoreapp2.0\CoreTraining.pdb
