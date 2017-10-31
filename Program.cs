@@ -14,14 +14,16 @@ namespace CoreTraining
     {
         public static void Main(string[] args)
         {
-            var host = new WebHostBuilder()
-            .UseUrls("http://localhost:5001")
+          var host = new WebHostBuilder()
+            .UseUrls("http://localhost:4200")
             .UseKestrel()
             .UseContentRoot(Directory.GetCurrentDirectory())
             .UseIISIntegration()
             .UseStartup<Startup>()
             .Build();
             host.Run();
+          
+            // BuildWebHost(args).Run();
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
