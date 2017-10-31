@@ -5,13 +5,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CoreTraining.Models;
-
+using CoreTraining.Models;
 namespace CoreTraining.Controllers
 {
     public class HomeController : Controller
     {
         public IActionResult Index()
         {
+            var articles = new List<Article>()
+            {
+                new Article() { Title = "Lorem ipsum.", Body="" }
+                
+            };
+            
             return View();
         }
 
