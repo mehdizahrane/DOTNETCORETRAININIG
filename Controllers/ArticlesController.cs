@@ -24,5 +24,9 @@ namespace CoreTraining.Controllers
                     return RedirectToAction("Index","Home");
                 }
             }
+            [Route("Articles")]
+            public IActionResult Articles(){
+                return RedirectToAction("Index","Home");
+            }
     }
 }
