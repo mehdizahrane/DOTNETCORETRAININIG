@@ -3,7 +3,10 @@
 @{
     ViewData["Title"] = "Article Details.";
 }
-
+<div class="pull-left">
+    <a href="@Url.Action("Index","Home")")><i class="icon fa-arrow-left"></i> Back home</a>
+</div>
+<br>
 
 <div class="container">
 
@@ -16,6 +19,9 @@
                     @Model.Body
                 </p>
         </div>
+        <footer>
+            <p>Published by @Model.Publisher.Username &nbsp; @Model.Created</p>
+        </footer>
     </div>
-
+    
 </div>
