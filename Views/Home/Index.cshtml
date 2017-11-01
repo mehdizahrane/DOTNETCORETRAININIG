@@ -1,19 +1,21 @@
 ﻿@model CoreTraining.ViewModels.HomeIndexViewModel
-
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<br/>
-<br/>
-<br/>
-@if(Model.Articles.Count > 0)
+<!-- Boxes -->
+
+<br>
+<div class="thumbnails">
+@foreach(var article in Model.Articles)
 {
-   foreach(var article in Model.Articles)
-   {
-       <li>@article.Title</li>
-   }
+    <div class="box">
+        <a href="#" class="image fit"><img src="@article.Caption" alt="" /></a>
+        <div class="inner">
+            <h3>@article.Title</h3>
+            <p>@article.Body</p>
+            <a href="@article.Slug" class="button form-control btn btn-info ">More</a>
+        </div>
+    </div>
 }
-else{
-    <p>No articles.</p>
-}
+</div>

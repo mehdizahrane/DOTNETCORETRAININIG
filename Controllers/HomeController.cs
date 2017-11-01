@@ -14,9 +14,9 @@ namespace CoreTraining.Controllers
         {
             var articles = new List<Article>()
             {
-                new Article() { Title = "Lorem ipsum.", Body="Lorem texte herehe here erehqsd ", Slug="lorem-ipsum", Publisher = new User(){slug="mehdi-zahrane"}, Category = new Category(){ Name="Lorem" } },
-                new Article() { Title = "Lorem ipsum.", Body="Lorem texte herehe here erehqsd ", Slug="lorem-ipsum", Publisher = new User(){slug="mehdi-zahrane"}, Category = new Category(){ Name="Lorem" } },
-                new Article() { Title = "Lorem ipsum.", Body="Lorem texte herehe here erehqsd ", Slug="lorem-ipsum", Publisher = new User(){slug="mehdi-zahrane"}, Category = new Category(){ Name="Lorem" } }
+                new Article() { Title = "Lorem ipsum.", Caption = "images/pic01.jpg", Body="Lorem texte herehe here erehqsd ", Slug="lorem-ipsum", Publisher = new User(){slug="mehdi-zahrane"}, Category = new Category(){ Name="Lorem" } },
+                new Article() { Title = "Lorem ipsum.", Caption = "images/pic05.jpg", Body="Lorem texte herehe here erehqsd ", Slug="lorem-ipsum", Publisher = new User(){slug="mehdi-zahrane"}, Category = new Category(){ Name="Lorem" } },
+                new Article() { Title = "Lorem ipsum.", Caption = "images/pic02.jpg", Body="Lorem texte herehe here erehqsd ", Slug="lorem-ipsum", Publisher = new User(){slug="mehdi-zahrane"}, Category = new Category(){ Name="Lorem" } }
 
             };
             var vm = new HomeIndexViewModel(){
