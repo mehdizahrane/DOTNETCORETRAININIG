@@ -1,11 +1,19 @@
-﻿@{
+﻿@model CoreTraining.ViewModels.HomeIndexViewModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-
-<div class="row">
-   <div class="col-md-12 text-center bg-primary bigTitle">
-       <h1>Welcome to coding club</h1>
-       <p>Lorem ipsum test test test</p>       
-   </div>
-</div>
+<br/>
+<br/>
+<br/>
+@if(Model.Articles.Count > 0)
+{
+   foreach(var article in Model.Articles)
+   {
+       <li>@article.Title</li>
+   }
+}
+else{
+    <p>No articles.</p>
+}

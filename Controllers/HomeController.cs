@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CoreTraining.Models;
-using CoreTraining.Models;
+using CoreTraining.ViewModels;
 namespace CoreTraining.Controllers
 {
     public class HomeController : Controller
@@ -14,11 +14,15 @@ namespace CoreTraining.Controllers
         {
             var articles = new List<Article>()
             {
-                new Article() { Title = "Lorem ipsum.", Body="" }
-                
+                new Article() { Title = "Lorem ipsum.", Body="Lorem texte herehe here erehqsd ", Slug="lorem-ipsum", Publisher = new User(){slug="mehdi-zahrane"}, Category = new Category(){ Name="Lorem" } },
+                new Article() { Title = "Lorem ipsum.", Body="Lorem texte herehe here erehqsd ", Slug="lorem-ipsum", Publisher = new User(){slug="mehdi-zahrane"}, Category = new Category(){ Name="Lorem" } },
+                new Article() { Title = "Lorem ipsum.", Body="Lorem texte herehe here erehqsd ", Slug="lorem-ipsum", Publisher = new User(){slug="mehdi-zahrane"}, Category = new Category(){ Name="Lorem" } }
+
             };
-            
-            return View();
+            var vm = new HomeIndexViewModel(){
+                Articles = articles
+            };
+            return View(vm);
         }
 
         public IActionResult About()
