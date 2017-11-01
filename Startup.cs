@@ -40,9 +40,6 @@ namespace CoreTraining
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name: "articleDetails",
-                    template: "{controller=Articles}/{slug}");
                     
                 routes.MapRoute(
                     name: "default",

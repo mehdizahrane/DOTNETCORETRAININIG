@@ -1,3 +1,21 @@
+@model CoreTraining.Models.Article
+
 @{
     ViewData["Title"] = "Article Details.";
 }
+
+
+<div class="container">
+
+    <div class="row text-center">
+        <div class="col-md-12">
+                <h2>@Model.Title</h2>
+                <br/>
+                <a href="#" class="image fit"><img src="@Model.Caption" alt="" /></a>
+                <p class="text-justify">
+                    @Model.Body
+                </p>
+        </div>
+    </div>
+
+</div>
