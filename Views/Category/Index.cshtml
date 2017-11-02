@@ -1,0 +1,14 @@
+@model CoreTraining.ViewModels.CategoryIndexViewModel
+
+@{
+    ViewData["Title"] = "Category's Index";
+}
+
+@if(Model.Categorys.Count > 0)
+{
+    <p>Theres some categorys to display.</p>
+}
+else
+{
+    <p>No categories to display.</p>
+}
