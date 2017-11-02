@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+
 namespace CoreTraining.Models{
     public class Category{
 

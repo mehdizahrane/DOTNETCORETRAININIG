@@ -2806,15 +2806,6 @@
           }
         }
       },
-      "MySql.Data.EntityFramework/8.0.9-dmr": {
-        "type": "package",
-        "compile": {
-          "lib/net452/MySql.Data.EntityFramework.dll": {}
-        },
-        "runtime": {
-          "lib/net452/MySql.Data.EntityFramework.dll": {}
-        }
-      },
       "NETStandard.Library/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -7834,21 +7825,6 @@
         "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Registry.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
-      ]
-    },
-    "MySql.Data.EntityFramework/8.0.9-dmr": {
-      "sha512": "Isq0kYLv0vJm0lhBh9DShUSoumpOglCiZ1d3gmGvlRAjm6LM86n2SPvRIPHTdq0JrEpf0bdoXEPVugNgGeBr7g==",
-      "type": "package",
-      "path": "mysql.data.entityframework/8.0.9-dmr",
-      "files": [
-        "content/app.config.transform",
-        "content/web.config.transform",
-        "contentFiles/any/net452/app.config.transform",
-        "contentFiles/any/net452/web.config.transform",
-        "lib/net452/MySql.Data.EntityFramework.dll",
-        "lib/net452/MySql.Data.EntityFramework.xml",
-        "mysql.data.entityframework.8.0.9-dmr.nupkg.sha512",
-        "mysql.data.entityframework.nuspec"
       ]
     },
     "NETStandard.Library/2.0.0": {
@@ -13134,10 +13110,8 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.AspNetCore.All >= 2.0.0",
-      "Microsoft.EntityFrameworkCore.Tools >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.0",
-      "MySql.Data.EntityFramework >= 8.0.9-dmr"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.0"
     ]
   },
   "packageFolders": {
@@ -13147,11 +13121,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Usedi1\\Desktop\\CoreTraining\\CoreTraining.csproj",
+      "projectUniqueName": "C:\\Users\\Usedi1\\Desktop\\CoreTraining\\CoreTraining.csproj",
       "projectName": "CoreTraining",
-      "projectPath": "c:\\Users\\Usedi1\\Desktop\\CoreTraining\\CoreTraining.csproj",
+      "projectPath": "C:\\Users\\Usedi1\\Desktop\\CoreTraining\\CoreTraining.csproj",
       "packagesPath": "C:\\Users\\Usedi1\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Usedi1\\Desktop\\CoreTraining\\obj\\",
+      "outputPath": "C:\\Users\\Usedi1\\Desktop\\CoreTraining\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13188,17 +13162,9 @@
             "target": "Package",
             "version": "2.0.0"
           },
-          "Microsoft.EntityFrameworkCore.Tools": {
-            "target": "Package",
-            "version": "2.0.0"
-          },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "2.0.0"
-          },
-          "MySql.Data.EntityFramework": {
-            "target": "Package",
-            "version": "8.0.9-dmr"
           }
         },
         "imports": [
@@ -13208,17 +13174,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'MySql.Data.EntityFramework 8.0.9-dmr' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
-      "libraryId": "MySql.Data.EntityFramework",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.0"
-      ]
-    }
-  ]
+  }
 }
