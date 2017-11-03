@@ -23,5 +23,34 @@ namespace CoreTraining.Controllers
            };
             return View("Index",vm);
         }
+
+        [Route("Category/Add")]
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(string Name)
+        {
+            if(!String.IsNullOrWhiteSpace(Name))
+            {
+                var cat = new Category()
+                {
+                    Name = Name,
+                    Slug = Name.Replace(" ", "-"),
+                    Created = DateTime.Now,
+                    Updated = DateTime.Now
+                };
+                _context.Add(cat);
+                _context.SaveChangesAsync();
+                return RedirectToAction("Index","Category");
+            }
+            else
+            {
+                ViewData["msg"] = "The name is required.";
+                return View("Add");
+            }
+        }
     }
 }
