@@ -6,8 +6,9 @@ namespace CoreTraining.Models{
 
 
         public int ID { get; set; }
-        [Required]
-        [StringLength(50)]
+        [Required(ErrorMessage = "Name of the category is required.")]
+        [StringLength(50, ErrorMessage = "Name must be less than 50 characters.")]
+        [Key]
         public string Name { get; set; }
         
         public string Slug { get; set; }
