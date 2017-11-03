@@ -52,5 +52,25 @@ namespace CoreTraining.Controllers
                 return View("Add");
             }
         }
+
+        [HttpGet]
+        public IActionResult Edit(int? id)
+        {
+            if(id.HasValue)
+            {
+                var category =  _context.Categories.SingleOrDefault(x => x.ID == id);
+                return View("Edit",category);
+            }
+            else
+            {
+                ViewData["msg"] = "";
+                return View("Index");
+            }
+        }
+        //[HttpPost]
+        public IActionResult Update(int? ID,string Name)
+        {
+            return Content("Dump data : " + ID + " - " + Name);
+        }
     }
 }

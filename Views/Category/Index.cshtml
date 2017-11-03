@@ -3,15 +3,32 @@
 @{
     ViewData["Title"] = "Category's Index";
 }
-
+    <div class="container">
+<a asp-action="Add" asp-controller="Category" >+Add Category</a>
+<br/>
 @if(Model.Categorys.Count > 0)
 {
-    foreach(var cat in Model.Categorys)
-    {
-        <li>@cat.Name</li>    
-    }
+
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>Slug :</td>
+                <td>Update:</td>
+                <td>Delete:</td>
+            </tr>
+            @foreach(var cat in Model.Categorys)
+            {
+               <tr>
+                <td>@cat.Name</td>
+                <td>@cat.Slug</td>
+                <td> <a  asp-action="Edit" asp-route-id="@cat.ID" asp-controller="Category"  class="button fit2" >Update</a> </td>
+                <td>Delete:</td> 
+               </tr> 
+            }
+        </table>
 }
 else
 {
     <p>No categories to display.</p>
 }
+    </div>
