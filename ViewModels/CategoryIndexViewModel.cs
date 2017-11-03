@@ -1,8 +1,8 @@
 using System;
 using CoreTraining.Models;
-using System.Linq;
+using System.Collections.Generic;
 namespace CoreTraining.ViewModels{
     public class CategoryIndexViewModel{
-        public IQueryable<Category> Categorys { get; set; }
+        public List<Category> Categorys { get; set; }
     }
 }

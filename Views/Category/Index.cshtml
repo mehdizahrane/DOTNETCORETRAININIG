@@ -6,7 +6,10 @@
 
 @if(Model.Categorys.Count > 0)
 {
-    <p>Theres some categorys to display.</p>
+    foreach(var cat in Model.Categorys)
+    {
+        <li>@cat.Name</li>    
+    }
 }
 else
 {

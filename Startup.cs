@@ -34,6 +34,8 @@ namespace CoreTraining
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
+                app.UseBrowserLink();
             }
             else
             {

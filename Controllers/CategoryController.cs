@@ -19,7 +19,7 @@ namespace CoreTraining.Controllers
            
            var vm = new CategoryIndexViewModel()
            {
-               Categorys = _context.Categories
+               Categorys = _context.Categories.ToList()
            };
             return View("Index",vm);
         }
