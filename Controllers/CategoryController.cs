@@ -72,19 +72,26 @@ namespace CoreTraining.Controllers
         {
             if(_context.Categories.Any(x => x.ID == ID))
             {
-                  var category = _context.Categories.SingleOrDefault(x => x.ID == ID);
+                 if(_context.Categories.Any(x => x.Name.Equals(Name)))
+                 {
+                     ViewData["msg"] = "Category name already exists.";
+                    return View("Edit",_context.Categories.SingleOrDefault(x => x.ID == ID));
+                 }
+                 else
+                 {
+                      var category = _context.Categories.SingleOrDefault(x => x.ID == ID);
                   category.Name = Name;
                   category.Updated = DateTime.Now;
                   category.Slug = Name.Replace(" ", "-");
                   _context.SaveChanges();
                  // ViewData["msg"] = "Category updated successfully.";
-                  return Content("Item updated");
+                
+                  return RedirectToAction("Index");
+                 }
             }
             else
             {
-                var category = _context.Categories.SingleOrDefault(x => x.ID == ID);
-                ViewData["msg"] = "Name already exists with the same category.";
-                return View("Edit",category);
+                return View("Edit",_context.Categories.SingleOrDefault(x => x.ID == ID));
             }
         }
     }
