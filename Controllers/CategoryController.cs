@@ -70,7 +70,7 @@ namespace CoreTraining.Controllers
         //[HttpPost]
         public IActionResult Update(int? ID,string Name)
         {
-            if(_context.Categories.Any(x => x.Name.Equals(Name)))
+            if(_context.Categories.Any(x => x.ID == ID))
             {
                   var category = _context.Categories.SingleOrDefault(x => x.ID == ID);
                   category.Name = Name;
@@ -82,8 +82,9 @@ namespace CoreTraining.Controllers
             }
             else
             {
+                var category = _context.Categories.SingleOrDefault(x => x.ID == ID);
                 ViewData["msg"] = "Name already exists with the same category.";
-                return View("Edit","Category");
+                return View("Edit",category);
             }
         }
     }

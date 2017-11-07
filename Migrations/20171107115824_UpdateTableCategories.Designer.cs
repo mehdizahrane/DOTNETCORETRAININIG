@@ -11,9 +11,10 @@ using System;
 namespace CoreTraining.Migrations
 {
     [DbContext(typeof(CodingClubDbContext))]
-    partial class CodingClubDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171107115824_UpdateTableCategories")]
+    partial class UpdateTableCategories
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
