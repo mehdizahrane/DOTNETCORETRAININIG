@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CoreTraining.Models;
 using CoreTraining.ViewModels;
+using CoreTraining.Contexts;
 namespace CoreTraining.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly CodingClubDbContext _context;
+        public HomeController(CodingClubDbContext context)
+        {
+            this._context = context;
+        }
         public IActionResult Index()
         {
             var articles = new List<Article>()
@@ -44,7 +50,19 @@ namespace CoreTraining.Controllers
         [HttpPost]
         public IActionResult Login(string username, string password)
         {
-            
+                if(_context.Users.Any(x => x.Username.Equals(username) && x.Password.Equals(password)))
+                {
+                        return Content("Logged successfully");
+                }
+                else
+                {
+                    IDictionary<String, String> errors = new Dictionary<String,String>()
+                    {
+                        { "invalid" , "Invalid Username or password." }
+                    };
+                    ViewData["errors"] = errors;
+                    return View("Login");
+                }
         }
         public IActionResult Error()
         {

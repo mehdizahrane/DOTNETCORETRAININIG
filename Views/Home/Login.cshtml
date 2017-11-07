@@ -2,7 +2,19 @@
 @{
     ViewData["Title"] = "Login";
 }
+
 <div class="container">
+    
+    @if(ViewData["errors"] != null)
+    {
+        var errors =  (IDictionary<String, String>)ViewData["errors"];
+        <div class="alert alert-danger">
+            @foreach(var error in errors)
+            {
+                <p class="container">-@error.Value</p>
+            }
+        </div>
+    }
     <div class="row">
         <div class="col-md-12">
             <h4>Login :</h4>
