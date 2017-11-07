@@ -2,7 +2,12 @@
 @{
     ViewData["Title"] = "Edit category ";
 }
-
+@if(ViewData["msg"] != null)
+{
+    <p class="alert alert-info">
+        @ViewData["msg"].ToString()
+    </p>
+}
 <div class="container">
     <div class="row">
         <div class="col-md-12">

@@ -70,19 +70,21 @@ namespace CoreTraining.Controllers
         //[HttpPost]
         public IActionResult Update(int? ID,string Name)
         {
-            /* if(ID.HasValue)
+            if(_context.Categories.Any(x => x.Name.Equals(Name)))
             {
-                var category = _context.Categories.SingleOrDefault(x => x.ID == ID);
-                category.Name = Name;
-                category.Updated = DateTime.Now;
-                category.Slug = Name.Replace(" ", "-");
-                _context.SaveChangesAsync();
+                  var category = _context.Categories.SingleOrDefault(x => x.ID == ID);
+                  category.Name = Name;
+                  category.Updated = DateTime.Now;
+                  category.Slug = Name.Replace(" ", "-");
+                  _context.SaveChanges();
+                 // ViewData["msg"] = "Category updated successfully.";
+                  return Content("Item updated");
             }
             else
             {
-
-            }*/
-            return Content("Nothing to show here.");
+                ViewData["msg"] = "Name already exists with the same category.";
+                return View("Edit","Category");
+            }
         }
     }
 }
