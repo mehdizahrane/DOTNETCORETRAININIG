@@ -36,7 +36,16 @@ namespace CoreTraining.Controllers
 
             return View();
         }
-
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Login(string username, string password)
+        {
+            
+        }
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
