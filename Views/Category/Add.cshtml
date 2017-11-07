@@ -2,7 +2,10 @@
 @{
     ViewData["Title"] = "Add new Category";
 }
-
+<div class="pull-left">
+    <a href="@Url.Action("Index","Category")")><i class="icon fa-arrow-left"></i> Back to categories list</a>
+</div>
+<br>
 @if(ViewData["msg"] != null)
 {
     <p class="alert alert-danger">
@@ -14,7 +17,7 @@
         <div class="col-md-12">
             <form asp-controller="Category" asp-action="Create" method="POST">
                 <div class="form-group">
-                    <label asp-for="Name" class="col-md-2 control-label" ></label>
+                    <label asp-for="Name" class="col-md-2 control-label" >Name :</label>
                     <input asp-for="Name" class="form-control" />
                     <span asp-validation-for="Name" class="text-danger" ></span>
                 </div>

@@ -2,9 +2,10 @@
 @{
     ViewData["Title"] = "Edit category ";
 }
-<div class="pull-right">
-    <a href="@Url.Action("Index","Category")")><i class="icon fa-arrow-left"></i> Back home</a>
+<div class="pull-left">
+    <a href="@Url.Action("Index","Category")")><i class="icon fa-arrow-left"></i> Back to categories list</a>
 </div>
+<br>
 @if(ViewData["msg"] != null)
 {
     <p class="alert alert-warning">
