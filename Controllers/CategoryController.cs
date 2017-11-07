@@ -70,28 +70,56 @@ namespace CoreTraining.Controllers
         //[HttpPost]
         public IActionResult Update(int? ID,string Name)
         {
-            if(_context.Categories.Any(x => x.ID == ID))
+            if(!String.IsNullOrWhiteSpace(Name))
             {
-                 if(_context.Categories.Any(x => x.Name.Equals(Name)))
-                 {
-                     ViewData["msg"] = "Category name already exists.";
-                    return View("Edit",_context.Categories.SingleOrDefault(x => x.ID == ID));
-                 }
-                 else
-                 {
-                      var category = _context.Categories.SingleOrDefault(x => x.ID == ID);
-                  category.Name = Name;
-                  category.Updated = DateTime.Now;
-                  category.Slug = Name.Replace(" ", "-");
-                  _context.SaveChanges();
-                 // ViewData["msg"] = "Category updated successfully.";
-                
-                  return RedirectToAction("Index");
-                 }
+                    if(_context.Categories.Any(x => x.ID == ID))
+                        {
+                            if(_context.Categories.Any(x => x.Name.Equals(Name)))
+                            {
+                                ViewData["msg"] = "Category name already exists.";
+                                return View("Edit",_context.Categories.SingleOrDefault(x => x.ID == ID));
+                            }
+                            else
+                            {
+                                var category = _context.Categories.SingleOrDefault(x => x.ID == ID);
+                                category.Name = Name;
+                                category.Updated = DateTime.Now;
+                                category.Slug = Name.Replace(" ", "-");
+                                _context.SaveChanges();
+                                return RedirectToAction("Index");
+                            }
+                    }
+                    else
+                    {
+                        return View("Edit",_context.Categories.SingleOrDefault(x => x.ID == ID));
+                    }
             }
             else
             {
+                ViewData["msg"] = "Category name is required.";
                 return View("Edit",_context.Categories.SingleOrDefault(x => x.ID == ID));
+            }
+        }
+        public IActionResult Delete(int? id)
+        {
+            if(id.HasValue)
+            {
+                    var cat = _context.Categories.SingleOrDefault(x => x.ID == id);
+                    if(cat.Articles != null)
+                    {
+                        foreach(var article in cat.Articles)
+                        {
+                            _context.Articles.Remove(article);
+                        } 
+                        _context.SaveChanges();
+                    }
+                    _context.Categories.Remove(cat);
+                    _context.SaveChanges();
+                    return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("Error");
             }
         }
     }

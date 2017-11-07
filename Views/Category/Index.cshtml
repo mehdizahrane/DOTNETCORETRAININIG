@@ -3,8 +3,8 @@
 @{
     ViewData["Title"] = "Category's Index";
 }
-    <div class="container">
-<a asp-action="Add" asp-controller="Category" >+Add Category</a>
+<div class="container">
+    <a asp-action="Add" asp-controller="Category" >+Add Category</a>
 <br/>
 @if(Model.Categorys.Count > 0)
 {
@@ -22,7 +22,32 @@
                 <td>@cat.Name</td>
                 <td>@cat.Slug</td>
                 <td> <a  asp-action="Edit" asp-route-id="@cat.ID" asp-controller="Category"  class="button fit2" >Update</a> </td>
-                <td>Delete:</td> 
+                <td>
+                    @{
+                         var idDataTarget =  "#myModal" + cat.ID;
+                         var DataTarget = "myModal" + cat.ID;
+                     }
+                    <a data-toggle="modal" data-target="@idDataTarget" class="button" >Delete</a>
+                <div id="@DataTarget" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Delete category :</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Do you really want to delete this category ?<br>
+                                    <strong>N.B</strong> : Deleting this category will delete automaticlly all the articles related to this category.
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <a  asp-action="Delete" asp-controller="Category" asp-route-id="@cat.ID" class="btn btn-danger" >Confirm</a>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </td> 
+                
                </tr> 
             }
         </table>
