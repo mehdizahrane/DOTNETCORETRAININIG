@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using CoreTraining.Models;
 using CoreTraining.ViewModels;
 using CoreTraining.Contexts;
+using Microsoft.AspNetCore.Session;
+using Microsoft.AspNetCore.Http;
 namespace CoreTraining.Controllers
 {
     public class HomeController : Controller
@@ -52,7 +54,8 @@ namespace CoreTraining.Controllers
         {
                 if(_context.Users.Any(x => x.Username.Equals(username) && x.Password.Equals(password)))
                 {
-                        return Content("Logged successfully");
+                        var user = _context.Users.SingleOrDefault(x => x.Username.Equals(username) && x.Password.Equals(password));
+                        HttpContext.Session.SetInt32();
                 }
                 else
                 {

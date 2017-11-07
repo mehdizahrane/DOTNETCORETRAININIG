@@ -26,6 +26,11 @@ namespace CoreTraining
             
             services.AddDbContext<CodingClubDbContext>(options => options.UseSqlite("Data Source=codingClub.db"));
 
+            services.AddSession(options =>
+            { 
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +48,9 @@ namespace CoreTraining
             }
 
             app.UseStaticFiles();
+
+            app.UseSession();
+            app.UseMvcWithDefaultRoute();
 
             app.UseMvc(routes =>
             {
